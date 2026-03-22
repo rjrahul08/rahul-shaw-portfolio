@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-void: #050508;
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #0d0d16;
+  --bg-tertiary: #111120;
+  --bg-card: #0f0f1e;
+  --bg-card-hover: #141428;
+  --cyan: #00f5ff;
+  --cyan-dim: #00c4cc;
+  --violet: #7b2fff;
+  --violet-dim: #5a22cc;
+  --green: #00ff88;
+  --green-dim: #00cc6a;
+  --orange: #ff6b35;
+  --pink: #ff2d78;
+  --text-primary: #eeeef5;
+  --text-secondary: #a0a0c0;
+  --text-muted: #4a4a6a;
+  --text-code: #00f5ff;
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-dim: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(0, 245, 255, 0.2);
+  --glow-cyan-sm: 0 0 15px rgba(0, 245, 255, 0.25);
+  --glow-cyan-md: 0 0 30px rgba(0, 245, 255, 0.35);
+  --glow-cyan-lg: 0 0 60px rgba(0, 245, 255, 0.4);
+  --glow-violet: 0 0 30px rgba(123, 47, 255, 0.35);
+  --glow-green: 0 0 20px rgba(0, 255, 136, 0.3);
+  --grid-color: rgba(255, 255, 255, 0.025);
+  --grid-size: 40px;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(180deg, #0a0a0f 0%, #050508 100%);
+  background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size), 100% 100%;
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.glass-card {
+  background: rgba(15, 15, 30, 0.62);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-dim);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--glow-cyan-sm), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.marquee {
+  display: inline-block;
+  min-width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.contact-select option {
+  color: #000;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+*::selection {
+  background: rgba(0, 245, 255, 0.2);
+  color: var(--text-primary);
+}
